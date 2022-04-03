@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po0-EU-2WM" customClass="KolodaView" customModule="Koloda">
-                    <rect key="frame" x="24" y="248" width="366" height="400"/>
+                    <rect key="frame" x="24" y="318.5" width="366" height="259"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="400" id="cn5-x9-311"/>
+                        <constraint firstAttribute="width" secondItem="Po0-EU-2WM" secondAttribute="height" multiplier="395:280" id="NvR-RB-BMw"/>
                     </constraints>
                 </view>
             </subviews>

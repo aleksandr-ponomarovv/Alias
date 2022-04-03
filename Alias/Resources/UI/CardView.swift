@@ -32,7 +32,13 @@ class CardView: UIView {
 private extension CardView {
     func setupUI() {
         setupCorner()
+        setupBorder()
         setupConstraints()
+    }
+    
+    func setupBorder() {
+        layer.borderWidth = 4
+        layer.borderColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor
     }
     
     func setupCorner() {
