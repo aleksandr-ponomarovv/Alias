@@ -3,6 +3,7 @@
 !*.xcodeproj/xcshareddata
 
 *.lock
+*.generated.swift
 
 /.bundle/
 !Gemfile.lock

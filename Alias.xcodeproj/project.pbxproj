@@ -19,6 +19,7 @@
 		1F966B6927E9556000338194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F966B6727E9556000338194 /* LaunchScreen.storyboard */; };
 		1F966B7327E9567B00338194 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F966B7127E9567B00338194 /* MainViewController.swift */; };
 		1F966B7427E9567B00338194 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F966B7227E9567B00338194 /* MainViewController.xib */; };
+		1FD26BC827F9BCAD001A72F1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD26BC727F9BCAD001A72F1 /* R.generated.swift */; };
 		1FE8900927F62FE5001412D2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8900827F62FE5001412D2 /* CardView.swift */; };
 		D86CA983D9EEE73C5E86E8F6 /* Pods_Alias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E863349562410752DD74D7F2 /* Pods_Alias.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		1F966B6A27E9556000338194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F966B7127E9567B00338194 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1F966B7227E9567B00338194 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1FD26BC727F9BCAD001A72F1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1FE8900827F62FE5001412D2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		86E3D8A5C647E6732F04CCF8 /* Pods-Alias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alias.release.xcconfig"; path = "Target Support Files/Pods-Alias/Pods-Alias.release.xcconfig"; sourceTree = "<group>"; };
 		A1FC6F6B776CCF884BB94FD5 /* Pods-Alias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alias.debug.xcconfig"; path = "Target Support Files/Pods-Alias/Pods-Alias.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				1F966B6527E9556000338194 /* Assets.xcassets */,
 				1F966B6727E9556000338194 /* LaunchScreen.storyboard */,
 				1F966B6A27E9556000338194 /* Info.plist */,
+				1FD26BC727F9BCAD001A72F1 /* R.generated.swift */,
 			);
 			path = SupportedFiles;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildConfigurationList = 1F966B6D27E9556000338194 /* Build configuration list for PBXNativeTarget "Alias" */;
 			buildPhases = (
 				8492AD9E2D3AA3CD543EB34D /* [CP] Check Pods Manifest.lock */,
+				1FD26BC627F9B8B1001A72F1 /* ShellScript */,
 				1F966B5527E9555F00338194 /* Sources */,
 				1F966B5627E9555F00338194 /* Frameworks */,
 				1F966B5727E9555F00338194 /* Resources */,
@@ -229,6 +233,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FD26BC627F9B8B1001A72F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate --disable-input-output-files-validation \"$SRCROOT/Alias/SupportedFiles/R.generated.swift\"\n";
+		};
 		5DBF94BDC237AA49562D54AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +305,7 @@
 				1F6E9CF027F3C5C8005983E4 /* MainInteractor.swift in Sources */,
 				1F95FA7E27F50F53003A8EBC /* AppCoordinator.swift in Sources */,
 				1F6E9CEE27F3C57F005983E4 /* MainPresenter.swift in Sources */,
+				1FD26BC827F9BCAD001A72F1 /* R.generated.swift in Sources */,
 				1F6E9CF227F3C61D005983E4 /* MainEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

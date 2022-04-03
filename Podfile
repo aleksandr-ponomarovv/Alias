@@ -8,4 +8,6 @@ target 'Alias' do
   # Pods for Alias
   pod "Koloda", '~> 5.0.1'
 
+  pod 'R.swift'
+
 end
