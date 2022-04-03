@@ -13,6 +13,7 @@ class CardView: UIView {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 32)
         label.textAlignment = .center
+        label.textColor = R.color.text_cardView()
         return label
     }()
     
@@ -29,8 +30,10 @@ class CardView: UIView {
 }
 
 // MARK: - Private methods
+
 private extension CardView {
     func setupUI() {
+        backgroundColor = R.color.bg_cardView()
         setupCorner()
         setupBorder()
         setupConstraints()
@@ -38,7 +41,7 @@ private extension CardView {
     
     func setupBorder() {
         layer.borderWidth = 4
-        layer.borderColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor
+        layer.borderColor = R.color.border_cardView()?.cgColor
     }
     
     func setupCorner() {

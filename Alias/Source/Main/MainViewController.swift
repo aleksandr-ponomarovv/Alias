@@ -42,7 +42,6 @@ extension MainViewController: KolodaViewDelegate {
         let position = kolodaView.currentCardIndex
         for i in 1...4 {
             let cardView = CardView(word: "Card \(i)")
-            cardView.backgroundColor = .blue
             views.append(cardView)
         }
         kolodaView.insertCardAtIndexRange(position..<position + 4, animated: true)
@@ -87,6 +86,7 @@ extension MainViewController: KolodaViewDataSource {
 }
 
 // MARK: - Private methods
+
 private extension MainViewController {
     func configureUI() {
         kolodaView.delegate = self
@@ -94,11 +94,8 @@ private extension MainViewController {
         modalTransitionStyle = .flipHorizontal
         
         let v1 = CardView(word: "first")
-        v1.backgroundColor = .blue
         let v3 = CardView(word: "second")
-        v3.backgroundColor = .yellow
         let v2 = CardView(word: "third")
-        v2.backgroundColor = .purple
         views.append(v1)
         views.append(v2)
         views.append(v3)
