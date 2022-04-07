@@ -15,6 +15,8 @@ protocol MainViewType: AnyObject {
 class MainViewController: UIViewController {
     
     @IBOutlet private weak var kolodaView: KolodaView!
+    @IBOutlet private weak var skipButton: UIButton!
+    @IBOutlet private weak var rightButton: UIButton!
     
     private var views: [UIView] = []
     
@@ -25,6 +27,15 @@ class MainViewController: UIViewController {
         
         presenter?.viewDidLoad()
         configureUI()
+    }
+    
+    @IBAction func didTapSkipButton(_ sender: UIButton) {
+        kolodaView?.swipe(.left)
+    }
+    
+    
+    @IBAction func didTapRightButton(_ sender: UIButton) {
+        kolodaView?.swipe(.right)
     }
 }
 
@@ -69,11 +80,11 @@ extension MainViewController: KolodaViewDataSource {
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
-        false
+        return false
     }
     
     func kolodaShouldTransparentizeNextCard(_ koloda: KolodaView) -> Bool {
-        false
+        return false
     }
     
     func kolodaSwipeThresholdRatioMargin(_ koloda: KolodaView) -> CGFloat? {
@@ -88,6 +99,7 @@ extension MainViewController: KolodaViewDataSource {
 // MARK: - Private methods
 
 private extension MainViewController {
+    
     func configureUI() {
         kolodaView.delegate = self
         kolodaView.dataSource = self
@@ -100,5 +112,17 @@ private extension MainViewController {
         views.append(v2)
         views.append(v3)
         kolodaView.reloadData()
+        
+        
+        skipButton.layer.cornerRadius = skipButton.bounds.height / 2
+        skipButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        skipButton.layer.cornerCurve = .continuous
+        skipButton.backgroundColor = .red
+        skipButton.tintColor = .white
+        rightButton.layer.cornerRadius = rightButton.bounds.height / 2
+        rightButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        rightButton.layer.cornerCurve = .continuous
+        rightButton.backgroundColor = .green
+        rightButton.tintColor = .white
     }
 }
