@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3D38A7280319D40018548A /* SimpleDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F3D38A6280319D40018548A /* SimpleDictionary.json */; };
+		1F3D38AB28031ECB0018548A /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D38AA28031ECB0018548A /* JsonReader.swift */; };
+		1F3D38AE28033BDE0018548A /* FileNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D38AD28033BDE0018548A /* FileNames.swift */; };
 		1F6E9CEE27F3C57F005983E4 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CED27F3C57F005983E4 /* MainPresenter.swift */; };
 		1F6E9CF027F3C5C8005983E4 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CEF27F3C5C8005983E4 /* MainInteractor.swift */; };
 		1F6E9CF227F3C61D005983E4 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CF127F3C61D005983E4 /* MainEntity.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F3D38A6280319D40018548A /* SimpleDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SimpleDictionary.json; sourceTree = "<group>"; };
+		1F3D38AA28031ECB0018548A /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
+		1F3D38AD28033BDE0018548A /* FileNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNames.swift; sourceTree = "<group>"; };
 		1F6E9CED27F3C57F005983E4 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		1F6E9CEF27F3C5C8005983E4 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		1F6E9CF127F3C61D005983E4 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
@@ -60,6 +66,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F3D38A8280319D90018548A /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				1F3D38A6280319D40018548A /* SimpleDictionary.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		1F3D38A928031E9A0018548A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1F3D38AA28031ECB0018548A /* JsonReader.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1F3D38AC28033BCA0018548A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1F3D38AD28033BDE0018548A /* FileNames.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		1F95FA7C27F50F3B003A8EBC /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +111,7 @@
 		1F95FA8027F5154F003A8EBC /* SupportedFiles */ = {
 			isa = PBXGroup;
 			children = (
+				1F3D38A8280319D90018548A /* Json */,
 				1F966B6527E9556000338194 /* Assets.xcassets */,
 				1F966B6727E9556000338194 /* LaunchScreen.storyboard */,
 				1F966B6A27E9556000338194 /* Info.plist */,
@@ -135,6 +166,8 @@
 		1FE8900627F62FA6001412D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1F3D38AC28033BCA0018548A /* Constants */,
+				1F3D38A928031E9A0018548A /* Managers */,
 				1FE8900727F62FD6001412D2 /* UI */,
 			);
 			path = Resources;
@@ -228,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F966B6927E9556000338194 /* LaunchScreen.storyboard in Resources */,
+				1F3D38A7280319D40018548A /* SimpleDictionary.json in Resources */,
 				1F966B7427E9567B00338194 /* MainViewController.xib in Resources */,
 				1F966B6627E9556000338194 /* Assets.xcassets in Resources */,
 			);
@@ -301,6 +335,7 @@
 			files = (
 				1F966B7327E9567B00338194 /* MainViewController.swift in Sources */,
 				1F6E9CF627F3C6AE005983E4 /* MainConfigurator.swift in Sources */,
+				1F3D38AB28031ECB0018548A /* JsonReader.swift in Sources */,
 				1F6E9CF427F3C656005983E4 /* MainRouter.swift in Sources */,
 				1F966B5D27E9555F00338194 /* AppDelegate.swift in Sources */,
 				1FE8900927F62FE5001412D2 /* CardView.swift in Sources */,
@@ -311,6 +346,7 @@
 				1F6E9CEE27F3C57F005983E4 /* MainPresenter.swift in Sources */,
 				1FD26BC827F9BCAD001A72F1 /* R.generated.swift in Sources */,
 				1F6E9CF227F3C61D005983E4 /* MainEntity.swift in Sources */,
+				1F3D38AE28033BDE0018548A /* FileNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
