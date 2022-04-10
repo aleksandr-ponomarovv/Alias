@@ -11,8 +11,10 @@ class CardView: UIView {
     
     private lazy var wordLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 32)
+        label.font = .boldSystemFont(ofSize: 42)
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
         label.textColor = R.color.text_cardView()
         return label
     }()
