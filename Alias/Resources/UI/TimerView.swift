@@ -43,12 +43,8 @@ class TimerView: UIView {
         addSubview(label)
         label.textAlignment = .center
         label.frame = bounds
-        if let font = labelFont {
-            label.font = font
-        }
-        if let color = labelTextColor {
-            label.textColor = color
-        }
+        label.font = labelFont
+        label.textColor = labelTextColor
         return label
     }()
     
