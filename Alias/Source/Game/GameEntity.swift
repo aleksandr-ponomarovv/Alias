@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct MainEntity: Codable {
+struct GameEntity: Codable {
     
 }

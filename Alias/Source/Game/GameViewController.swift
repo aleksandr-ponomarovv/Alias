@@ -8,24 +8,22 @@
 import UIKit
 import Koloda
 
-protocol MainViewType: AnyObject {
+protocol GameViewType: AnyObject {
     
 }
 
-class MainViewController: UIViewController {
+class GameViewController: UIViewController {
     
+    @IBOutlet private weak var timerView: TimerView!
     @IBOutlet private weak var kolodaView: KolodaView!
     @IBOutlet private weak var skipButton: UIButton!
     @IBOutlet private weak var rightButton: UIButton!
     
-    private var views: [UIView] = []
-    
-    var presenter: MainPresenterType?
+    var presenter: GamePresenterType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.viewDidLoad()
         configureUI()
     }
     
@@ -37,25 +35,35 @@ class MainViewController: UIViewController {
     @IBAction func didTapRightButton(_ sender: UIButton) {
         kolodaView?.swipe(.right)
     }
+    
+    @IBAction func didTapRestartButton(_ sender: UIButton) {
+        timerView.start(beginingValue: 3, interval: 1)
+    }
 }
 
 // MARK: - MainViewType
 
-extension MainViewController: MainViewType {
+extension GameViewController: GameViewType {
     
 }
 
 
 // MARK: - KolodaViewDelegate
 
-extension MainViewController: KolodaViewDelegate {
+extension GameViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        let position = kolodaView.currentCardIndex
-        for i in 1...4 {
-            let cardView = CardView(word: "Card \(i)")
-            views.append(cardView)
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        switch direction {
+        case .left:
+            print("AP: -1")
+        case .right:
+            print("AP: +1")
+        case .up, .down, .topLeft, .topRight, .bottomLeft, .bottomRight:
+            print("AP: default")
         }
-        kolodaView.insertCardAtIndexRange(position..<position + 4, animated: true)
+        
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -65,10 +73,10 @@ extension MainViewController: KolodaViewDelegate {
 
 // MARK: - KolodaViewDataSource
 
-extension MainViewController: KolodaViewDataSource {
+extension GameViewController: KolodaViewDataSource {
     
-    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return views.count
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return presenter?.numberOfCards ?? 0
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -76,7 +84,7 @@ extension MainViewController: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return views[index]
+        return presenter?.getKolodaView(viewForCardAt: index) ?? .init()
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
@@ -90,35 +98,41 @@ extension MainViewController: KolodaViewDataSource {
     func kolodaSwipeThresholdRatioMargin(_ koloda: KolodaView) -> CGFloat? {
         return 0.5
     }
-    
-    //    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-    //        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
-    //    }
 }
 
 // MARK: - Private methods
 
-private extension MainViewController {
+private extension GameViewController {
     
     func configureUI() {
+        configureKolodaView()
+        configureTimerView()
+        configureSkipButton()
+        configureRightButton()
+        
+        kolodaView.reloadData()
+    }
+    
+    func configureKolodaView() {
         kolodaView.delegate = self
         kolodaView.dataSource = self
-        modalTransitionStyle = .flipHorizontal
-        
-        let v1 = CardView(word: "first")
-        let v3 = CardView(word: "second")
-        let v2 = CardView(word: "third")
-        views.append(v1)
-        views.append(v2)
-        views.append(v3)
-        kolodaView.reloadData()
-        
-        
+    }
+    
+    func configureTimerView() {
+        timerView.labelFont = .systemFont(ofSize: 18)
+        timerView.labelTextColor = .black
+        timerView.lineWidth = 4
+    }
+    
+    func configureSkipButton() {
         skipButton.layer.cornerRadius = skipButton.bounds.height / 2
         skipButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         skipButton.layer.cornerCurve = .continuous
         skipButton.backgroundColor = .red
         skipButton.tintColor = .white
+    }
+    
+    func configureRightButton() {
         rightButton.layer.cornerRadius = rightButton.bounds.height / 2
         rightButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         rightButton.layer.cornerCurve = .continuous

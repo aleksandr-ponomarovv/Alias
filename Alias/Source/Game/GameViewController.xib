@@ -9,11 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Alias" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="Alias" customModuleProvider="target">
             <connections>
                 <outlet property="kolodaView" destination="Po0-EU-2WM" id="9dO-lO-6kE"/>
                 <outlet property="rightButton" destination="Lmv-3w-fpM" id="OmE-wO-sEw"/>
                 <outlet property="skipButton" destination="pxR-PZ-7V8" id="RwY-Vd-YTI"/>
+                <outlet property="timerView" destination="H52-rY-MUl" id="izQ-OF-Stz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,6 +51,23 @@
                         <constraint firstAttribute="height" constant="50" id="wEr-Sh-8Yk"/>
                     </constraints>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H52-rY-MUl" customClass="TimerView" customModule="Alias" customModuleProvider="target">
+                    <rect key="frame" x="24" y="44" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="JPd-wQ-Wax"/>
+                        <constraint firstAttribute="height" constant="50" id="kKg-WW-E7D"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azO-uo-WWd">
+                    <rect key="frame" x="326" y="51" width="64" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="restart"/>
+                    <connections>
+                        <action selector="didTapRestartButton:" destination="-1" eventType="touchUpInside" id="Ya5-f5-oF9"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,11 +76,15 @@
                 <constraint firstItem="Po0-EU-2WM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3p8-o4-WOg"/>
                 <constraint firstItem="ba9-gg-g86" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="7cF-OY-XLH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Po0-EU-2WM" secondAttribute="trailing" constant="24" id="RPc-MT-etK"/>
+                <constraint firstItem="azO-uo-WWd" firstAttribute="centerY" secondItem="H52-rY-MUl" secondAttribute="centerY" id="SNQ-Kg-zPy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ba9-gg-g86" secondAttribute="bottom" constant="12" id="adh-Ll-mQy"/>
+                <constraint firstItem="H52-rY-MUl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="e5w-qB-Ms4"/>
                 <constraint firstItem="Po0-EU-2WM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="mVR-k2-pUG"/>
+                <constraint firstItem="H52-rY-MUl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nsP-uJ-5fH"/>
                 <constraint firstItem="ba9-gg-g86" firstAttribute="top" secondItem="Po0-EU-2WM" secondAttribute="bottom" constant="24" id="yQ3-A5-VxM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="azO-uo-WWd" secondAttribute="trailing" constant="24" id="zdF-v7-qer"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>

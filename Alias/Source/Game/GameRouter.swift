@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol MainRouterType {
+protocol GameRouterType {
     
 }
 
-class MainRouter: MainRouterType {
+class GameRouter: GameRouterType {
     
-    private weak var viewController: MainViewController?
+    private weak var viewController: GameViewController?
     
-    init(viewController: MainViewController) {
+    init(viewController: GameViewController) {
         self.viewController = viewController
     }
 }

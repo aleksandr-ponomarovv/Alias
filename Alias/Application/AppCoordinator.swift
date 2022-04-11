@@ -28,8 +28,8 @@ class AppCoordinator: BaseCoordinator {
 // MARK: - Private methods
 private extension AppCoordinator {
     func startController() -> UIViewController {
-        let mainViewController = MainViewController()
-        let configurator: MainConfiguratorType = MainConfigurator()
+        let mainViewController = GameViewController()
+        let configurator: GameConfiguratorType = GameConfigurator()
         configurator.configure(viewController: mainViewController)
         return mainViewController
     }
