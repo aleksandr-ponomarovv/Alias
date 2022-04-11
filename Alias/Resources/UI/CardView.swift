@@ -55,9 +55,10 @@ private extension CardView {
         addSubview(wordLabel)
         wordLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        let padding: CGFloat = 12
         NSLayoutConstraint.activate([
-            wordLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            wordLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            wordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            wordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             wordLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
