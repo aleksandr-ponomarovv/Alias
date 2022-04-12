@@ -9,7 +9,7 @@ import UIKit
 import Koloda
 
 protocol GameViewType: AnyObject {
-    
+    func startTimer()
 }
 
 class GameViewController: UIViewController {
@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet private weak var timerView: TimerView!
     @IBOutlet private weak var kolodaView: KolodaView!
     @IBOutlet private weak var skipButton: UIButton!
-    @IBOutlet private weak var rightButton: UIButton!
+    @IBOutlet private weak var guessButton: UIButton!
     
     var presenter: GamePresenterType?
     
@@ -27,12 +27,18 @@ class GameViewController: UIViewController {
         configureUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter?.viewDidAppear()
+    }
+    
     @IBAction func didTapSkipButton(_ sender: UIButton) {
         kolodaView?.swipe(.left)
     }
     
     
-    @IBAction func didTapRightButton(_ sender: UIButton) {
+    @IBAction func didTapGuessButton(_ sender: UIButton) {
         kolodaView?.swipe(.right)
     }
     
@@ -41,29 +47,35 @@ class GameViewController: UIViewController {
     }
 }
 
-// MARK: - MainViewType
+// MARK: - GameViewType
 
 extension GameViewController: GameViewType {
     
+    func startTimer() {
+        guard let presenter = presenter else { return }
+        
+        timerView.start(beginingValue: presenter.timerSeconds, interval: presenter.timerInterval)
+    }
 }
 
 
 // MARK: - KolodaViewDelegate
 
 extension GameViewController: KolodaViewDelegate {
+    
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         switch direction {
-        case .left:
-            print("AP: -1")
-        case .right:
-            print("AP: +1")
-        case .up, .down, .topLeft, .topRight, .bottomLeft, .bottomRight:
-            print("AP: default")
+        case .left, .topLeft, .bottomLeft:
+            presenter?.skipWord()
+        case .right, .topRight, .bottomRight:
+            presenter?.guessWord()
+        case .up, .down:
+            break
         }
-        
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -77,6 +89,10 @@ extension GameViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return presenter?.numberOfCards ?? 0
+    }
+    
+    func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
+        return [.left, .topLeft, .bottomLeft, .right, .topRight, .bottomRight]
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -109,8 +125,6 @@ private extension GameViewController {
         configureTimerView()
         configureSkipButton()
         configureRightButton()
-        
-        kolodaView.reloadData()
     }
     
     func configureKolodaView() {
@@ -133,10 +147,10 @@ private extension GameViewController {
     }
     
     func configureRightButton() {
-        rightButton.layer.cornerRadius = rightButton.bounds.height / 2
-        rightButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        rightButton.layer.cornerCurve = .continuous
-        rightButton.backgroundColor = .green
-        rightButton.tintColor = .white
+        guessButton.layer.cornerRadius = guessButton.bounds.height / 2
+        guessButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        guessButton.layer.cornerCurve = .continuous
+        guessButton.backgroundColor = .green
+        guessButton.tintColor = .white
     }
 }
