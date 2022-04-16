@@ -9,10 +9,10 @@ import Foundation
 
 class Game {
     
-    private let timerView: TimerView
+    private let teams: [String: Int]
     
-    init(timerView: TimerView) {
-        self.timerView = timerView
+    init(teams: [String: Int]) {
+        self.teams = teams
     }
     
     func start() {
