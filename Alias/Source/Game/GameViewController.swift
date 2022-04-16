@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  GameViewController.swift
 //  Alias
 //
 //  Created by Aleksandr on 22.03.2022.

@@ -1,5 +1,5 @@
 //
-//  MainInteractor.swift
+//  GameInteractor.swift
 //  Alias
 //
 //  Created by Aleksandr on 30.03.2022.
