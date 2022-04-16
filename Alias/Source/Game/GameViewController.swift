@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet private weak var timerView: TimerView!
     @IBOutlet private weak var kolodaView: KolodaView!
+    @IBOutlet private weak var totalScoreLabel: UILabel!
     @IBOutlet private weak var skipButton: UIButton!
     @IBOutlet private weak var guessButton: UIButton!
     
@@ -37,13 +38,8 @@ class GameViewController: UIViewController {
         kolodaView?.swipe(.left)
     }
     
-    
     @IBAction func didTapGuessButton(_ sender: UIButton) {
         kolodaView?.swipe(.right)
-    }
-    
-    @IBAction func didTapRestartButton(_ sender: UIButton) {
-        timerView.start(beginingValue: 3, interval: 1)
     }
 }
 
@@ -76,6 +72,7 @@ extension GameViewController: KolodaViewDelegate {
         case .up, .down:
             break
         }
+        totalScoreLabel.text = presenter?.totalScoreText
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -121,6 +118,7 @@ extension GameViewController: KolodaViewDataSource {
 private extension GameViewController {
     
     func configureUI() {
+        totalScoreLabel.text = presenter?.totalScoreText
         configureKolodaView()
         configureTimerView()
         configureSkipButton()

@@ -11,6 +11,7 @@ protocol GamePresenterType {
     var numberOfCards: Int { get }
     var timerSeconds: Int { get }
     var timerInterval: Double { get }
+    var totalScoreText: String { get }
     func viewDidAppear()
     func skipWord()
     func guessWord()
@@ -18,6 +19,10 @@ protocol GamePresenterType {
 }
 
 class GamePresenter: GamePresenterType {
+    
+    private let interactor: GameInteractorType
+    private let router: GameRouterType
+    private weak var view: GameViewType?
     
     var numberOfCards: Int {
         interactor.words.count
@@ -31,9 +36,13 @@ class GamePresenter: GamePresenterType {
         1
     }
     
-    private let interactor: GameInteractorType
-    private let router: GameRouterType
-    private weak var view: GameViewType?
+    var totalScoreText: String {
+        let score = interactor.totalScrore
+        let isNegativeScore = score < 0
+        var totalText = "Total score:"
+        totalText.append(isNegativeScore ? "" : " ")
+        return "\(totalText)   \(score)"
+    }
     
     init(interactor: GameInteractorType,
          router: GameRouterType,
