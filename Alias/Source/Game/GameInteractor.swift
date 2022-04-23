@@ -14,7 +14,6 @@ protocol GameInteractorType {
 }
 
 class GameInteractor: GameInteractorType {
-  
     private let point = 1
     private var skipScore = 0
     private var guessedScore = 0

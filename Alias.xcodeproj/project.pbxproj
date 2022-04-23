@@ -239,11 +239,12 @@
 			buildConfigurationList = 1F966B6D27E9556000338194 /* Build configuration list for PBXNativeTarget "Alias" */;
 			buildPhases = (
 				8492AD9E2D3AA3CD543EB34D /* [CP] Check Pods Manifest.lock */,
-				1FD26BC627F9B8B1001A72F1 /* ShellScript */,
+				1FD26BC627F9B8B1001A72F1 /* RSwift */,
 				1F966B5527E9555F00338194 /* Sources */,
 				1F966B5627E9555F00338194 /* Frameworks */,
 				1F966B5727E9555F00338194 /* Resources */,
 				5DBF94BDC237AA49562D54AA /* [CP] Embed Pods Frameworks */,
+				1F7ED025281469D100489300 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -303,7 +304,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FD26BC627F9B8B1001A72F1 /* ShellScript */ = {
+		1F7ED025281469D100489300 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,6 +313,25 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		1FD26BC627F9B8B1001A72F1 /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = RSwift;
 			outputFileListPaths = (
 			);
 			outputPaths = (

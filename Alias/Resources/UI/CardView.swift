@@ -8,7 +8,6 @@
 import UIKit
 
 class CardView: UIView {
-    
     private lazy var wordLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 42)

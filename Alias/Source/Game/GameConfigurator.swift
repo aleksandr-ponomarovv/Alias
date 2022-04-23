@@ -12,7 +12,6 @@ protocol GameConfiguratorType {
 }
 
 class GameConfigurator: GameConfiguratorType {
-    
     func configure(viewController: GameViewController) {
         let interactor = GameInteractor()
         let router = GameRouter(viewController: viewController)

@@ -8,11 +8,9 @@
 import Foundation
 
 protocol MenuPresenterType {
-    
 }
 
 class MenuPresenter: MenuPresenterType {
-    
     private let interactor: MenuInteractorType
     private let router: MenuRouterType
     private weak var view: MenuViewType?

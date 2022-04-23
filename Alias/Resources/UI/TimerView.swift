@@ -16,14 +16,14 @@ import UIKit
 }
 
 class TimerView: UIView {
-    @IBInspectable var lineWidth: CGFloat = 2.0
-    @IBInspectable var lineColor: UIColor = .white
-    @IBInspectable var trailLineColor: UIColor = .black
+    var lineWidth: CGFloat = 2.0
+    var lineColor: UIColor = .white
+    var trailLineColor: UIColor = .black
+    var isLabelHidden: Bool = false
     
-    @IBInspectable var isLabelHidden: Bool = false
-    @IBInspectable var labelFont: UIFont?
-    @IBInspectable var labelTextColor: UIColor?
-    @IBInspectable var timerFinishingText: String?
+    var labelFont: UIFont?
+    var labelTextColor: UIColor?
+    var timerFinishingText: String?
     
     weak var delegate: TimerViewDelegate?
     
@@ -86,7 +86,7 @@ class TimerView: UIView {
         let context = UIGraphicsGetCurrentContext()
         let radius = (rect.width - lineWidth) / 2
         
-        var currentAngle : CGFloat!
+        var currentAngle: CGFloat!
         
         if moveClockWise {
             currentAngle = CGFloat((.pi * 2 * elapsedTime) / totalTime)
@@ -99,7 +99,7 @@ class TimerView: UIView {
         // Main line
         context?.beginPath()
         context?.addArc(
-            center: CGPoint(x: rect.midX, y:rect.midY),
+            center: CGPoint(x: rect.midX, y: rect.midY),
             radius: radius,
             startAngle: currentAngle - .pi / 2,
             endAngle: .pi * 2 - .pi / 2,
@@ -110,7 +110,7 @@ class TimerView: UIView {
         // Trail line
         context?.beginPath()
         context?.addArc(
-            center: CGPoint(x: rect.midX, y:rect.midY),
+            center: CGPoint(x: rect.midX, y: rect.midY),
             radius: radius,
             startAngle: -.pi / 2,
             endAngle: currentAngle - .pi / 2,
@@ -137,7 +137,8 @@ class TimerView: UIView {
         timer?.invalidate()
         timer = Timer(timeInterval: fireInterval, target: self, selector: #selector(TimerView.timerFired(_:)), userInfo: nil, repeats: true)
         
-        RunLoop.main.add(timer!, forMode: .common)
+        guard let timer = timer else { return }
+        RunLoop.main.add(timer, forMode: .common)
         
         delegate?.timerDidStart?(sender: self)
     }
@@ -182,7 +183,6 @@ class TimerView: UIView {
 }
 
 // MARK: - Private methods
-
 private extension TimerView {
     /**
      * Calculate value in minutes and seconds and return it as String

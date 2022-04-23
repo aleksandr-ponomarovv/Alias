@@ -19,7 +19,6 @@ protocol GamePresenterType {
 }
 
 class GamePresenter: GamePresenterType {
-    
     private let interactor: GameInteractorType
     private let router: GameRouterType
     private weak var view: GameViewType?

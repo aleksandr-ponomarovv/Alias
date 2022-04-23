@@ -13,7 +13,6 @@ protocol GameViewType: AnyObject {
 }
 
 class GameViewController: UIViewController {
-    
     @IBOutlet private weak var timerView: TimerView!
     @IBOutlet private weak var kolodaView: KolodaView!
     @IBOutlet private weak var totalScoreLabel: UILabel!
@@ -44,9 +43,7 @@ class GameViewController: UIViewController {
 }
 
 // MARK: - GameViewType
-
 extension GameViewController: GameViewType {
-    
     func startTimer() {
         guard let presenter = presenter else { return }
         
@@ -54,13 +51,9 @@ extension GameViewController: GameViewType {
     }
 }
 
-
 // MARK: - KolodaViewDelegate
-
 extension GameViewController: KolodaViewDelegate {
-    
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
@@ -81,9 +74,7 @@ extension GameViewController: KolodaViewDelegate {
 }
 
 // MARK: - KolodaViewDataSource
-
 extension GameViewController: KolodaViewDataSource {
-    
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return presenter?.numberOfCards ?? 0
     }
@@ -114,9 +105,7 @@ extension GameViewController: KolodaViewDataSource {
 }
 
 // MARK: - Private methods
-
 private extension GameViewController {
-    
     func configureUI() {
         totalScoreLabel.text = presenter?.totalScoreText
         configureKolodaView()

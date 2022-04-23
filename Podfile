@@ -9,5 +9,6 @@ target 'Alias' do
   pod "Koloda", '~> 5.0.1'
 
   pod 'R.swift'
+  pod 'SwiftLint'
 
 end

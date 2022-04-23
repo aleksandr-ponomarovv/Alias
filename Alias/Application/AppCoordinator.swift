@@ -12,7 +12,6 @@ protocol BaseCoordinator {
 }
 
 class AppCoordinator: BaseCoordinator {
-    
     private let window: UIWindow
     
     init(window: UIWindow) {
@@ -28,8 +27,8 @@ class AppCoordinator: BaseCoordinator {
 // MARK: - Private methods
 private extension AppCoordinator {
     func startController() -> UIViewController {
-        let mainViewController = GameViewController()
-        let configurator: GameConfiguratorType = GameConfigurator()
+        let mainViewController = MenuViewController()
+        let configurator: MenuConfiguratorType = MenuConfigurator()
         configurator.configure(viewController: mainViewController)
         return mainViewController
     }

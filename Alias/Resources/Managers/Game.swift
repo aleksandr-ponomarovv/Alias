@@ -8,7 +8,6 @@
 import Foundation
 
 class Game {
-    
     private let teams: [String: Int]
     
     init(teams: [String: Int]) {
@@ -16,6 +15,5 @@ class Game {
     }
     
     func start() {
-        
     }
 }
