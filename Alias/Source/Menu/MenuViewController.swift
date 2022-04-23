@@ -15,9 +15,13 @@ class MenuViewController: UIViewController {
     @IBOutlet private weak var playImageView: UIImageView!
     @IBOutlet private weak var playButton: UIButton!
     
-    @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var infoImageView: UIImageView!
-    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet private weak var infoView: UIView!
+    @IBOutlet private weak var infoImageView: UIImageView!
+    @IBOutlet private weak var infoButton: UIButton!
+    
+    @IBOutlet private weak var settingsView: UIView!
+    @IBOutlet private weak var settingsImageView: UIImageView!
+    @IBOutlet private weak var settingsButton: UIButton!
     
     var presenter: MenuPresenterType?
     
@@ -32,6 +36,20 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func didTapInfoButton(_ sender: UIButton) {
+        let label = UILabel()
+        label.text = """
+The game is divided into turns of about one minute of length. The teams play in turns,
+and on each team's turn, one of the team members has to explain words on word cards to the other team members.
+The other team members take guesses at the word, and words that have been correctly guessed earn the team one point per word.
+Explanation mistakes (meaning the explainer uses the word to be explained, part of it, or a derivative of it),
+and words passed over without being guessed take points away. The players move on the board as many places
+as they have earned points on their turn.
+"""
+        label.numberOfLines = 0
+        present(ModalViewController(contentView: label), animated: false)
+    }
+    
+    @IBAction func didTapSettingsButton(_ sender: UIButton) {
     }
 }
 

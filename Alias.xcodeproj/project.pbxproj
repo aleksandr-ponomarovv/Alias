@@ -23,6 +23,7 @@
 		1F6E9CF227F3C61D005983E4 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CF127F3C61D005983E4 /* GameEntity.swift */; };
 		1F6E9CF427F3C656005983E4 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CF327F3C656005983E4 /* GameRouter.swift */; };
 		1F6E9CF627F3C6AE005983E4 /* GameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E9CF527F3C6AE005983E4 /* GameConfigurator.swift */; };
+		1F7ED0272814A38000489300 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED0262814A38000489300 /* ModalViewController.swift */; };
 		1F95FA7E27F50F53003A8EBC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95FA7D27F50F53003A8EBC /* AppCoordinator.swift */; };
 		1F966B5D27E9555F00338194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F966B5C27E9555F00338194 /* AppDelegate.swift */; };
 		1F966B5F27E9555F00338194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F966B5E27E9555F00338194 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 		1F6E9CF127F3C61D005983E4 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		1F6E9CF327F3C656005983E4 /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
 		1F6E9CF527F3C6AE005983E4 /* GameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurator.swift; sourceTree = "<group>"; };
+		1F7ED0262814A38000489300 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		1F95FA7D27F50F53003A8EBC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1F966B5927E9555F00338194 /* Alias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F966B5C27E9555F00338194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				1FE8900827F62FE5001412D2 /* CardView.swift */,
 				1FA8C09627FF99FD008C291A /* TimerView.swift */,
+				1F7ED0262814A38000489300 /* ModalViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				1F44B4D6280B748D00A788C2 /* MenuConfigurator.swift in Sources */,
 				1F44B4D2280B72E200A788C2 /* MenuEntity.swift in Sources */,
 				1F966B5F27E9555F00338194 /* SceneDelegate.swift in Sources */,
+				1F7ED0272814A38000489300 /* ModalViewController.swift in Sources */,
 				1F6E9CF027F3C5C8005983E4 /* GameInteractor.swift in Sources */,
 				1F95FA7E27F50F53003A8EBC /* AppCoordinator.swift in Sources */,
 				1FA8C09727FF99FD008C291A /* TimerView.swift in Sources */,
