@@ -99,7 +99,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <connections>
-                                        <action selector="didTapInfoButton:" destination="-1" eventType="touchUpInside" id="rp8-cI-g5C"/>
                                         <action selector="didTapSettingsButton:" destination="-1" eventType="touchUpInside" id="Iar-1Q-r6j"/>
                                     </connections>
                                 </button>
@@ -121,7 +120,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="bg_secondary"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="te1-g4-UIs" secondAttribute="trailing" constant="24" id="57t-pZ-9fn"/>
                 <constraint firstItem="te1-g4-UIs" firstAttribute="height" secondItem="AlK-Bb-6M5" secondAttribute="height" multiplier="0.5" id="aob-rM-EeV"/>
@@ -137,9 +136,6 @@
         <image name="arrowtriangle.right.circle" catalog="system" width="128" height="121"/>
         <image name="gearshape.circle" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="bg_secondary">
-            <color red="0.43700000643730164" green="0.72699999809265137" blue="0.96200001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="tint_main">
             <color red="0.050999999046325684" green="0.32199999690055847" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

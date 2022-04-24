@@ -8,7 +8,7 @@
 import UIKit
 
 final class ModalViewController: UIViewController {
-    var maxDimmedAlpha: CGFloat = 0.6
+    var maxDimmedAlpha: CGFloat = 0.5
     var defaultHeight: CGFloat = UIScreen.main.bounds.height / 2
     var dismissibleHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100
     var maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
@@ -21,7 +21,7 @@ final class ModalViewController: UIViewController {
     
     private lazy var topLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = R.color.bg_topLine()
         let height: CGFloat = 4
         view.widthAnchor.constraint(equalToConstant: 42).isActive = true
         view.heightAnchor.constraint(equalToConstant: height).isActive = true

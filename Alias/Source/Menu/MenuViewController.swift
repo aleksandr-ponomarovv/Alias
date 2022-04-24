@@ -46,7 +46,8 @@ and words passed over without being guessed take points away. The players move o
 as they have earned points on their turn.
 """
         label.numberOfLines = 0
-        present(ModalViewController(contentView: label), animated: false)
+        let modalViewController = ModalViewController(contentView: label)
+        present(modalViewController, animated: false)
     }
     
     @IBAction func didTapSettingsButton(_ sender: UIButton) {
