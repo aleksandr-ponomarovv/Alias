@@ -8,6 +8,7 @@
 import UIKit
 
 class CardView: UIView {
+    
     private lazy var wordLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 42)
@@ -31,8 +32,8 @@ class CardView: UIView {
 }
 
 // MARK: - Private methods
-
 private extension CardView {
+    
     func setupUI() {
         backgroundColor = R.color.bg_cardView()
         setupCorner()

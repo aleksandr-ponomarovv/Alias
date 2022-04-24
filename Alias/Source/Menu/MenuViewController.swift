@@ -11,6 +11,7 @@ protocol MenuViewType: AnyObject {
 }
 
 class MenuViewController: UIViewController {
+    
     @IBOutlet private weak var playView: UIView!
     @IBOutlet private weak var playImageView: UIImageView!
     @IBOutlet private weak var playButton: UIButton!

@@ -8,6 +8,7 @@
 import UIKit
 
 final class ModalViewController: UIViewController {
+    
     var maxDimmedAlpha: CGFloat = 0.5
     var defaultHeight: CGFloat = UIScreen.main.bounds.height / 2
     var dismissibleHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100

@@ -13,6 +13,7 @@ protocol GameViewType: AnyObject {
 }
 
 class GameViewController: UIViewController {
+    
     @IBOutlet private weak var timerView: TimerView!
     @IBOutlet private weak var kolodaView: KolodaView!
     @IBOutlet private weak var totalScoreLabel: UILabel!

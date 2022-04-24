@@ -8,8 +8,11 @@
 import Foundation
 
 protocol GameSettingsInteractorType {
+
 }
 
 class GameSettingsInteractor: GameSettingsInteractorType {
+    
     init() {}
+    
 }

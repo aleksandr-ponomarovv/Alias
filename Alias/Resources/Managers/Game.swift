@@ -7,7 +7,18 @@
 
 import Foundation
 
+protocol GameDelegate: AnyObject {
+    func gameDidEnd(_ game: Game)
+}
+
+extension GameDelegate {
+    func gameDidEnd(_ game: Game) {}
+}
+
 class Game {
+    
+    weak var delegate: GameDelegate?
+    
     private let teams: [String: Int]
     
     init(teams: [String: Int]) {

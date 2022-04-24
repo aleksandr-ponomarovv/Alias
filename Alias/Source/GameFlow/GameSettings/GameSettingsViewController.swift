@@ -24,6 +24,7 @@ class GameSettingsViewController: UIViewController {
 
 // MARK: - GameSettingsViewType
 extension GameSettingsViewController: GameSettingsViewType {
+
 }
 
 // MARK: - Private methods

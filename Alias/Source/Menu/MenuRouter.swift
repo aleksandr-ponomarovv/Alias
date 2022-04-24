@@ -8,9 +8,11 @@
 import Foundation
 
 protocol MenuRouterType {
+
 }
 
 class MenuRouter: MenuRouterType {
+    
     private weak var viewController: MenuViewController?
     
     init(viewController: MenuViewController) {

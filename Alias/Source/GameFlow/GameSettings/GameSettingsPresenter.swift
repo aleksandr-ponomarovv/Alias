@@ -8,10 +8,11 @@
 import Foundation
 
 protocol GameSettingsPresenterType {
-    
+
 }
 
 class GameSettingsPresenter: GameSettingsPresenterType {
+    
     private let interactor: GameSettingsInteractorType
     private let router: GameSettingsRouterType
     private weak var view: GameSettingsViewType?

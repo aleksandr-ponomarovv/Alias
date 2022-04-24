@@ -12,6 +12,7 @@ protocol MenuConfiguratorType {
 }
 
 class MenuConfigurator: MenuConfiguratorType {
+    
     func configure(viewController: MenuViewController) {
         let interactor = MenuInteractor()
         let router = MenuRouter(viewController: viewController)

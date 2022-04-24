@@ -8,9 +8,11 @@
 import Foundation
 
 protocol GameSettingsRouterType {
+
 }
 
 class GameSettingsRouter: GameSettingsRouterType {
+    
     private weak var viewController: GameSettingsViewController?
     
     init(viewController: GameSettingsViewController) {

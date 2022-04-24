@@ -8,8 +8,11 @@
 import Foundation
 
 protocol MenuInteractorType {
+    
 }
 
 class MenuInteractor: MenuInteractorType {
+    
     init() {}
+    
 }

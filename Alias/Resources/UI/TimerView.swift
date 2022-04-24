@@ -16,6 +16,7 @@ import UIKit
 }
 
 class TimerView: UIView {
+    
     var lineWidth: CGFloat = 2.0
     var lineColor: UIColor = .white
     var trailLineColor: UIColor = .black
