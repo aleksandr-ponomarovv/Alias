@@ -15,12 +15,7 @@ class MenuViewController: UIViewController {
     @IBOutlet private weak var playImageView: UIImageView!
     @IBOutlet private weak var playButton: UIButton!
     
-    @IBOutlet private weak var infoView: UIView!
-    @IBOutlet private weak var infoImageView: UIImageView!
     @IBOutlet private weak var infoButton: UIButton!
-    
-    @IBOutlet private weak var settingsView: UIView!
-    @IBOutlet private weak var settingsImageView: UIImageView!
     @IBOutlet private weak var settingsButton: UIButton!
     
     var presenter: MenuPresenterType?

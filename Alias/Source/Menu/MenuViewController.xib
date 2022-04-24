@@ -12,14 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="Alias" customModuleProvider="target">
             <connections>
                 <outlet property="infoButton" destination="Br7-Gp-b6R" id="0c7-wE-UTf"/>
-                <outlet property="infoImageView" destination="Cje-y1-501" id="u6c-rF-PtL"/>
-                <outlet property="infoView" destination="MaW-dy-T2m" id="jGN-hU-jbu"/>
                 <outlet property="playButton" destination="tb5-xk-vM3" id="3j3-qQ-Gzl"/>
                 <outlet property="playImageView" destination="3qX-wH-bxo" id="NBF-dM-3AU"/>
                 <outlet property="playView" destination="AlK-Bb-6M5" id="EdO-HX-pP3"/>
                 <outlet property="settingsButton" destination="f4l-7z-LsY" id="Cg0-cP-fPF"/>
-                <outlet property="settingsImageView" destination="tVL-tI-k1A" id="JgK-bm-KBC"/>
-                <outlet property="settingsView" destination="Caz-LT-wHN" id="bIL-Mc-HXq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,60 +57,25 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="te1-g4-UIs">
                     <rect key="frame" x="24" y="572" width="366" height="100"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaW-dy-T2m" userLabel="Info View">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Br7-Gp-b6R">
                             <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Cje-y1-501">
-                                    <rect key="frame" x="0.0" y="0.5" width="183" height="99"/>
-                                    <color key="tintColor" name="tint_main"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Br7-Gp-b6R">
-                                    <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <connections>
-                                        <action selector="didTapInfoButton:" destination="-1" eventType="touchUpInside" id="QJQ-nu-tXj"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Cje-y1-501" secondAttribute="trailing" id="2T9-04-FrY"/>
-                                <constraint firstItem="Cje-y1-501" firstAttribute="leading" secondItem="MaW-dy-T2m" secondAttribute="leading" id="3tt-In-N7s"/>
-                                <constraint firstAttribute="trailing" secondItem="Br7-Gp-b6R" secondAttribute="trailing" id="7BQ-c4-HOh"/>
-                                <constraint firstItem="Cje-y1-501" firstAttribute="top" secondItem="MaW-dy-T2m" secondAttribute="top" id="9zG-Dl-3R2"/>
-                                <constraint firstItem="Br7-Gp-b6R" firstAttribute="top" secondItem="MaW-dy-T2m" secondAttribute="top" id="AM1-dY-eTf"/>
-                                <constraint firstItem="Br7-Gp-b6R" firstAttribute="leading" secondItem="MaW-dy-T2m" secondAttribute="leading" id="QdV-ER-L20"/>
-                                <constraint firstAttribute="bottom" secondItem="Cje-y1-501" secondAttribute="bottom" id="faL-UI-uGv"/>
-                                <constraint firstAttribute="bottom" secondItem="Br7-Gp-b6R" secondAttribute="bottom" id="kNm-sU-hJY"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-LT-wHN" userLabel="Info View">
+                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="i">
+                                <color key="titleColor" name="tint_main"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapInfoButton:" destination="-1" eventType="touchUpInside" id="QJQ-nu-tXj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4l-7z-LsY">
                             <rect key="frame" x="183" y="0.0" width="183" height="100"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-tI-k1A">
-                                    <rect key="frame" x="0.0" y="0.5" width="183" height="99"/>
-                                    <color key="tintColor" name="tint_main"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4l-7z-LsY">
-                                    <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <connections>
-                                        <action selector="didTapSettingsButton:" destination="-1" eventType="touchUpInside" id="Iar-1Q-r6j"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="tVL-tI-k1A" secondAttribute="bottom" id="6FA-sX-44k"/>
-                                <constraint firstItem="f4l-7z-LsY" firstAttribute="leading" secondItem="Caz-LT-wHN" secondAttribute="leading" id="9f5-Go-abY"/>
-                                <constraint firstAttribute="trailing" secondItem="f4l-7z-LsY" secondAttribute="trailing" id="DOF-tq-azL"/>
-                                <constraint firstAttribute="trailing" secondItem="tVL-tI-k1A" secondAttribute="trailing" id="LUc-nm-9Ew"/>
-                                <constraint firstAttribute="bottom" secondItem="f4l-7z-LsY" secondAttribute="bottom" id="Snd-mR-KAO"/>
-                                <constraint firstItem="f4l-7z-LsY" firstAttribute="top" secondItem="Caz-LT-wHN" secondAttribute="top" id="cF1-AR-Mco"/>
-                                <constraint firstItem="tVL-tI-k1A" firstAttribute="top" secondItem="Caz-LT-wHN" secondAttribute="top" id="psl-xd-gGm"/>
-                                <constraint firstItem="tVL-tI-k1A" firstAttribute="leading" secondItem="Caz-LT-wHN" secondAttribute="leading" id="zl7-oO-sRc"/>
-                            </constraints>
-                        </view>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="gear"/>
+                            <connections>
+                                <action selector="didTapSettingsButton:" destination="-1" eventType="touchUpInside" id="Iar-1Q-r6j"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
@@ -134,8 +95,7 @@
     </objects>
     <resources>
         <image name="arrowtriangle.right.circle" catalog="system" width="128" height="121"/>
-        <image name="gearshape.circle" catalog="system" width="128" height="121"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="gear" width="100" height="100"/>
         <namedColor name="tint_main">
             <color red="0.050999999046325684" green="0.32199999690055847" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
