@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MenuPresenterType {
-
+    func didTapPlayButton()
 }
 
 class MenuPresenter: MenuPresenterType {
@@ -23,5 +23,9 @@ class MenuPresenter: MenuPresenterType {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func didTapPlayButton() {
+        router.showGameSettingsScreen()
     }
 }

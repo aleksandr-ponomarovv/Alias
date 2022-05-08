@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MenuRouterType {
-
+    func showGameSettingsScreen()
 }
 
 class MenuRouter: MenuRouterType {
@@ -17,5 +17,12 @@ class MenuRouter: MenuRouterType {
     
     init(viewController: MenuViewController) {
         self.viewController = viewController
+    }
+    
+    func showGameSettingsScreen() {
+        let gameViewController = GameSettingsViewController()
+        let configurator: GameSettingsConfiguratorType = GameSettingsConfigurator()
+        configurator.configure(viewController: gameViewController)
+        viewController?.navigationController?.pushViewController(gameViewController, animated: true)
     }
 }

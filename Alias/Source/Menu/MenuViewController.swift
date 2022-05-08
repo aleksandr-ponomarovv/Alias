@@ -28,7 +28,7 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func didTapPlayButton(_ sender: UIButton) {
-        print("OP: didTapPlayButton")
+        presenter?.didTapPlayButton()
     }
     
     @IBAction func didTapInfoButton(_ sender: UIButton) {
