@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F12A61D282332F700EDC85F /* TextFieldPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12A61C282332F700EDC85F /* TextFieldPicker.swift */; };
 		1F2E703A28157007007D9450 /* GameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E703828157007007D9450 /* GameSettingsViewController.swift */; };
 		1F2E703B28157007007D9450 /* GameSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2E703928157007007D9450 /* GameSettingsViewController.xib */; };
 		1F2E703D28157081007D9450 /* GameSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E703C28157081007D9450 /* GameSettingsPresenter.swift */; };
@@ -38,13 +39,18 @@
 		1F966B6927E9556000338194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F966B6727E9556000338194 /* LaunchScreen.storyboard */; };
 		1F966B7327E9567B00338194 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F966B7127E9567B00338194 /* GameViewController.swift */; };
 		1F966B7427E9567B00338194 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F966B7227E9567B00338194 /* GameViewController.xib */; };
+		1F9CB1D7281F04AA004C0193 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9CB1D6281F04AA004C0193 /* UIConstants.swift */; };
+		1F9CB1DC281F3AD2004C0193 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9CB1DB281F3AD2004C0193 /* Int+Extension.swift */; };
 		1FA8C09727FF99FD008C291A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8C09627FF99FD008C291A /* TimerView.swift */; };
+		1FC6D3B62815EB94001E6DAC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D3B52815EB94001E6DAC /* Team.swift */; };
 		1FD26BC827F9BCAD001A72F1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD26BC727F9BCAD001A72F1 /* R.generated.swift */; };
 		1FE8900927F62FE5001412D2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8900827F62FE5001412D2 /* CardView.swift */; };
+		1FFF860A28280D860089AB7D /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF860928280D860089AB7D /* UIFont+Extension.swift */; };
 		D86CA983D9EEE73C5E86E8F6 /* Pods_Alias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E863349562410752DD74D7F2 /* Pods_Alias.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F12A61C282332F700EDC85F /* TextFieldPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPicker.swift; sourceTree = "<group>"; };
 		1F2E703828157007007D9450 /* GameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewController.swift; sourceTree = "<group>"; };
 		1F2E703928157007007D9450 /* GameSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameSettingsViewController.xib; sourceTree = "<group>"; };
 		1F2E703C28157081007D9450 /* GameSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsPresenter.swift; sourceTree = "<group>"; };
@@ -78,9 +84,13 @@
 		1F966B6A27E9556000338194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F966B7127E9567B00338194 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1F966B7227E9567B00338194 /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		1F9CB1D6281F04AA004C0193 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		1F9CB1DB281F3AD2004C0193 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		1FA8C09627FF99FD008C291A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		1FC6D3B52815EB94001E6DAC /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		1FD26BC727F9BCAD001A72F1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1FE8900827F62FE5001412D2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1FFF860928280D860089AB7D /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		86E3D8A5C647E6732F04CCF8 /* Pods-Alias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alias.release.xcconfig"; path = "Target Support Files/Pods-Alias/Pods-Alias.release.xcconfig"; sourceTree = "<group>"; };
 		A1FC6F6B776CCF884BB94FD5 /* Pods-Alias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alias.debug.xcconfig"; path = "Target Support Files/Pods-Alias/Pods-Alias.debug.xcconfig"; sourceTree = "<group>"; };
 		E863349562410752DD74D7F2 /* Pods_Alias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				1F2E703928157007007D9450 /* GameSettingsViewController.xib */,
-				1F2E703E281570B6007D9450 /* GameSettingsInteractor.swift */,
 				1F2E703828157007007D9450 /* GameSettingsViewController.swift */,
+				1F2E703E281570B6007D9450 /* GameSettingsInteractor.swift */,
 				1F2E703C28157081007D9450 /* GameSettingsPresenter.swift */,
 				1F2E7040281570E4007D9450 /* GameSettingsEntity.swift */,
 				1F2E7042281570FE007D9450 /* GameSettingsRouter.swift */,
@@ -134,6 +144,7 @@
 			children = (
 				1F3D38AA28031ECB0018548A /* JsonReader.swift */,
 				1F3D38AF28034D460018548A /* Game.swift */,
+				1FC6D3B52815EB94001E6DAC /* Team.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 		1F3D38AC28033BCA0018548A /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				1F9CB1D6281F04AA004C0193 /* UIConstants.swift */,
 				1F3D38AD28033BDE0018548A /* FileNames.swift */,
 			);
 			path = Constants;
@@ -234,9 +246,19 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		1F9CB1DA281F3590004C0193 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F9CB1DB281F3AD2004C0193 /* Int+Extension.swift */,
+				1FFF860928280D860089AB7D /* UIFont+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1FE8900627F62FA6001412D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1F9CB1DA281F3590004C0193 /* Extensions */,
 				1F3D38AC28033BCA0018548A /* Constants */,
 				1F3D38A928031E9A0018548A /* Managers */,
 				1FE8900727F62FD6001412D2 /* UI */,
@@ -250,6 +272,7 @@
 				1FE8900827F62FE5001412D2 /* CardView.swift */,
 				1FA8C09627FF99FD008C291A /* TimerView.swift */,
 				1F7ED0262814A38000489300 /* ModalViewController.swift */,
+				1F12A61C282332F700EDC85F /* TextFieldPicker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -429,10 +452,12 @@
 			files = (
 				1F966B7327E9567B00338194 /* GameViewController.swift in Sources */,
 				1F2E703D28157081007D9450 /* GameSettingsPresenter.swift in Sources */,
+				1FC6D3B62815EB94001E6DAC /* Team.swift in Sources */,
 				1F3D38B028034D460018548A /* Game.swift in Sources */,
 				1F44B4CE280B6DF300A788C2 /* MenuPresenter.swift in Sources */,
 				1F6E9CF627F3C6AE005983E4 /* GameConfigurator.swift in Sources */,
 				1F3D38AB28031ECB0018548A /* JsonReader.swift in Sources */,
+				1F9CB1DC281F3AD2004C0193 /* Int+Extension.swift in Sources */,
 				1F44B4D4280B733800A788C2 /* MenuRouter.swift in Sources */,
 				1F44B4D0280B723E00A788C2 /* MenuInteractor.swift in Sources */,
 				1F2E7043281570FE007D9450 /* GameSettingsRouter.swift in Sources */,
@@ -443,8 +468,10 @@
 				1FE8900927F62FE5001412D2 /* CardView.swift in Sources */,
 				1F44B4CB280B695800A788C2 /* MenuViewController.swift in Sources */,
 				1F44B4D6280B748D00A788C2 /* MenuConfigurator.swift in Sources */,
+				1F9CB1D7281F04AA004C0193 /* UIConstants.swift in Sources */,
 				1F44B4D2280B72E200A788C2 /* MenuEntity.swift in Sources */,
 				1F966B5F27E9555F00338194 /* SceneDelegate.swift in Sources */,
+				1FFF860A28280D860089AB7D /* UIFont+Extension.swift in Sources */,
 				1F7ED0272814A38000489300 /* ModalViewController.swift in Sources */,
 				1F6E9CF027F3C5C8005983E4 /* GameInteractor.swift in Sources */,
 				1F2E7041281570E5007D9450 /* GameSettingsEntity.swift in Sources */,
@@ -454,6 +481,7 @@
 				1F6E9CEE27F3C57F005983E4 /* GamePresenter.swift in Sources */,
 				1FD26BC827F9BCAD001A72F1 /* R.generated.swift in Sources */,
 				1F6E9CF227F3C61D005983E4 /* GameEntity.swift in Sources */,
+				1F12A61D282332F700EDC85F /* TextFieldPicker.swift in Sources */,
 				1F3D38AE28033BDE0018548A /* FileNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
