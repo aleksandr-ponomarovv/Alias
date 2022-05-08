@@ -23,7 +23,7 @@ class TextFieldPicker: UITextField {
     
     weak var toolbarDelegate: TextFieldPickerDelegate?
     
-    private(set) var toolbar = UIToolbar()
+    private let toolbar = UIToolbar()
     private let pickerView = UIPickerView()
     private let numberOfComponents = 1
     private let inComponent = 0
