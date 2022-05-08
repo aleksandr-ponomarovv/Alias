@@ -30,6 +30,6 @@ private extension AppCoordinator {
         let mainViewController = MenuViewController()
         let configurator: MenuConfiguratorType = MenuConfigurator()
         configurator.configure(viewController: mainViewController)
-        return mainViewController
+        return UINavigationController(rootViewController: mainViewController) 
     }
 }

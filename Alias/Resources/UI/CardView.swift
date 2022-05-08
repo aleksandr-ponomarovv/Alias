@@ -33,7 +33,6 @@ class CardView: UIView {
 
 // MARK: - Private methods
 private extension CardView {
-    
     func setupUI() {
         backgroundColor = R.color.bg_cardView()
         setupCorner()
@@ -42,7 +41,7 @@ private extension CardView {
     }
     
     func setupBorder() {
-        layer.borderWidth = 4
+        layer.borderWidth = UIConstants.borderWidth
         layer.borderColor = R.color.border_cardView()?.cgColor
     }
     
@@ -59,7 +58,6 @@ private extension CardView {
         NSLayoutConstraint.activate([
             wordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             wordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            wordLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
+            wordLabel.centerYAnchor.constraint(equalTo: centerYAnchor)])
     }
 }
