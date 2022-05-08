@@ -8,14 +8,16 @@
 import UIKit
 
 @objc protocol TimerViewDelegate: AnyObject {
-    @objc optional func timerDidUpdateCounterValue(sender: TimerView, newValue: Int)
-    @objc optional func timerDidStart(sender: TimerView)
-    @objc optional func timerDidPause(sender: TimerView)
-    @objc optional func timerDidResume(sender: TimerView)
-    @objc optional func timerDidEnd(sender: TimerView, elapsedTime: TimeInterval)
+    @objc optional func timerDidUpdateCounterValue(_ timer: TimerView, newValue: Int)
+    @objc optional func timerDidStart(_ timer: TimerView)
+    @objc optional func timerDidPause(_ timer: TimerView)
+    @objc optional func timerDidResume(_ timer: TimerView)
+    @objc optional func timerDidEnd(_ timer: TimerView, elapsedTime: TimeInterval)
 }
 
 class TimerView: UIView {
+    
+    weak var delegate: TimerViewDelegate?
     
     var lineWidth: CGFloat = 2.0
     var lineColor: UIColor = .white
@@ -25,8 +27,6 @@ class TimerView: UIView {
     var labelFont: UIFont?
     var labelTextColor: UIColor?
     var timerFinishingText: String?
-    
-    weak var delegate: TimerViewDelegate?
     
     // use minutes and seconds for presentation
     var useMinutesAndSecondsRepresentation = false
@@ -62,7 +62,7 @@ class TimerView: UIView {
                     }
                 }
             }
-            delegate?.timerDidUpdateCounterValue?(sender: self, newValue: currentCounterValue)
+            delegate?.timerDidUpdateCounterValue?(self, newValue: currentCounterValue)
         }
     }
     
@@ -141,7 +141,7 @@ class TimerView: UIView {
         guard let timer = timer else { return }
         RunLoop.main.add(timer, forMode: .common)
         
-        delegate?.timerDidStart?(sender: self)
+        delegate?.timerDidStart?(self)
     }
     
     /**
@@ -149,8 +149,7 @@ class TimerView: UIView {
      */
     func pause() {
         timer?.fireDate = Date.distantFuture
-        
-        delegate?.timerDidPause?(sender: self)
+        delegate?.timerDidPause?(self)
     }
     
     /**
@@ -158,8 +157,7 @@ class TimerView: UIView {
      */
     func resume() {
         timer?.fireDate = Date()
-        
-        delegate?.timerDidResume?(sender: self)
+        delegate?.timerDidResume?(self)
     }
     
     /**
@@ -179,7 +177,7 @@ class TimerView: UIView {
         currentCounterValue = 0
         timer?.invalidate()
         
-        delegate?.timerDidEnd?(sender: self, elapsedTime: elapsedTime)
+        delegate?.timerDidEnd?(self, elapsedTime: elapsedTime)
     }
 }
 
@@ -195,7 +193,7 @@ private extension TimerView {
         return minutes.description + ":" + secondString
     }
     
-    @objc private func timerFired(_ timer: Timer) {
+    @objc func timerFired(_ timer: Timer) {
         elapsedTime += fireInterval
         
         if elapsedTime <= totalTime {
