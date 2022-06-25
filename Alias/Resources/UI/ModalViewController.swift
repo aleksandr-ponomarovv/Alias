@@ -7,18 +7,11 @@
 
 import UIKit
 
+protocol ModalViewControllerDelegate: AnyObject {
+    func modalViewControllerContentView(_ modalViewController: ModalViewController) -> UIView
+}
+
 final class ModalViewController: UIViewController {
-    
-    var maxDimmedAlpha: CGFloat = 0.5
-    var defaultHeight: CGFloat = UIScreen.main.bounds.height / 2
-    var dismissibleHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100
-    var maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
-    var contentView = UIView()
-    
-    private lazy var currentContainerHeight: CGFloat = defaultHeight
-    
-    private var containerViewHeightConstraint: NSLayoutConstraint?
-    private var containerViewBottomConstraint: NSLayoutConstraint?
     
     private lazy var topLineView: UIView = {
         let view = UIView()
@@ -56,8 +49,20 @@ final class ModalViewController: UIViewController {
         return view
     }()
     
-    init(contentView: UIView) {
-        self.contentView = contentView
+    private lazy var contentView: UIView = delegate?.modalViewControllerContentView(self) ?? .init()
+    
+    var maxDimmedAlpha: CGFloat = 0.5
+    var defaultHeight: CGFloat = UIScreen.main.bounds.height / 2
+    var dismissibleHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100
+    var maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
+    private(set) lazy var currentContainerHeight: CGFloat = defaultHeight
+    
+    weak var delegate: ModalViewControllerDelegate?
+    
+    private var containerViewHeightConstraint: NSLayoutConstraint?
+    private var containerViewBottomConstraint: NSLayoutConstraint?
+    
+    init() {
         super.init(nibName: nil, bundle: nil)
         
         modalPresentationStyle = .overCurrentContext

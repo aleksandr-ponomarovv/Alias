@@ -14,12 +14,16 @@ protocol GameSettingsViewType: AnyObject {
 class GameSettingsViewController: UIViewController {
     
     @IBOutlet private weak var timeIntervalTextField: TextFieldPicker!
-    
     @IBOutlet private weak var wordsCountTextField: TextFieldPicker!
     
-    @IBOutlet private var stackViews: [UIView]!
+    @IBOutlet private weak var lastWordLabel: UILabel!
+    @IBOutlet private weak var lastWordSwitch: UISwitch!
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet private weak var vocabluaryLabel: UILabel!
+    @IBOutlet private weak var selectedVocabluaryLabel: UILabel!
+    @IBOutlet private weak var vocabluaryButton: UIButton!
+    
+    @IBOutlet private var stackViews: [UIView]!
     
     var presenter: GameSettingsPresenterType?
     
@@ -27,6 +31,14 @@ class GameSettingsViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+    }
+    
+    @IBAction private func didTapVacabluaryButton(_ sender: UIButton) {
+        presenter?.didTapVacabluaryButton()
+    }
+    
+    @IBAction private func didTapPlayButton(_ sender: UIButton) {
+        presenter?.didTapPlayButton()
     }
 }
 

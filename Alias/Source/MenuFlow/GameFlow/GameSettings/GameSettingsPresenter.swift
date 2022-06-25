@@ -13,6 +13,9 @@ protocol GameSettingsPresenterType {
     var timeIntervalSelectedRow: Int { get }
     var wordsCountSelectedRow: Int { get }
     
+    func didTapVacabluaryButton()
+    func didTapPlayButton()
+    
     func timeIntervalTextField(titleForRow row: Int) -> String
     func timeIntervalTextField(didSelectRow row: Int)
     func wordsCountTextField(titleForRow row: Int) -> String
@@ -47,6 +50,14 @@ class GameSettingsPresenter: GameSettingsPresenterType {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func didTapVacabluaryButton() {
+        router.openChoiceOfVocabularyScreen()
+    }
+    
+    func didTapPlayButton() {
+        router.openGameScreen()
     }
     
     func timeIntervalTextField(titleForRow row: Int) -> String {

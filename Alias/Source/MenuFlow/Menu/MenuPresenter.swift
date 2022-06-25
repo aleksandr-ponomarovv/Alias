@@ -9,6 +9,8 @@ import Foundation
 
 protocol MenuPresenterType {
     func didTapPlayButton()
+    func didTapSettingsButton()
+    func didTapInfoButton()
 }
 
 class MenuPresenter: MenuPresenterType {
@@ -26,6 +28,14 @@ class MenuPresenter: MenuPresenterType {
     }
     
     func didTapPlayButton() {
-        router.showGameSettingsScreen()
+        router.pushGameSettingsScreen()
+    }
+    
+    func didTapSettingsButton() {
+        router.pushSettingsScreen()
+    }
+    
+    func didTapInfoButton() {
+        router.presentInfoModalScreen()
     }
 }

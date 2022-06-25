@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po0-EU-2WM" customClass="KolodaView" customModule="Koloda">
-                    <rect key="frame" x="24" y="144" width="366" height="632"/>
+                    <rect key="frame" x="24" y="130" width="366" height="646"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ba9-gg-g86">
@@ -53,7 +53,7 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H52-rY-MUl" customClass="TimerView" customModule="Alias" customModuleProvider="target">
-                    <rect key="frame" x="340" y="44" width="50" height="50"/>
+                    <rect key="frame" x="340" y="68" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="JPd-wQ-Wax"/>
@@ -61,7 +61,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASC-WS-7U4">
-                    <rect key="frame" x="24" y="56" width="54.5" height="26.5"/>
+                    <rect key="frame" x="24" y="80" width="54.5" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -77,9 +77,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Po0-EU-2WM" secondAttribute="trailing" constant="24" id="RPc-MT-etK"/>
                 <constraint firstItem="ASC-WS-7U4" firstAttribute="centerY" secondItem="H52-rY-MUl" secondAttribute="centerY" id="VQP-jW-9af"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ba9-gg-g86" secondAttribute="bottom" constant="12" id="adh-Ll-mQy"/>
-                <constraint firstItem="Po0-EU-2WM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="mVR-k2-pUG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H52-rY-MUl" secondAttribute="trailing" constant="24" id="meD-FF-2KO"/>
-                <constraint firstItem="H52-rY-MUl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nsP-uJ-5fH"/>
+                <constraint firstItem="H52-rY-MUl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="nsP-uJ-5fH"/>
+                <constraint firstItem="Po0-EU-2WM" firstAttribute="top" secondItem="H52-rY-MUl" secondAttribute="bottom" constant="12" id="tzO-Qe-hjS"/>
                 <constraint firstItem="ba9-gg-g86" firstAttribute="top" secondItem="Po0-EU-2WM" secondAttribute="bottom" constant="24" id="yQ3-A5-VxM"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>

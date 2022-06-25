@@ -19,11 +19,9 @@ extension TextFieldPickerDelegate {
     func textFieldPickerDidTapCancel(_ textFieldPicker: TextFieldPicker) { textFieldPicker.resignFirstResponder() }
 }
 
-class TextFieldPicker: UITextField {
+final class TextFieldPicker: UITextField {
     
-    weak var toolbarDelegate: TextFieldPickerDelegate?
-    
-    private let toolbar = UIToolbar()
+    private let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 300)))
     private let pickerView = UIPickerView()
     private let numberOfComponents = 1
     private let inComponent = 0
@@ -34,6 +32,8 @@ class TextFieldPicker: UITextField {
         label.font = .sectionBold
         return label
     }()
+
+    weak var toolbarDelegate: TextFieldPickerDelegate?
     
     var selectedRow: Int {
         pickerView.selectedRow(inComponent: inComponent)

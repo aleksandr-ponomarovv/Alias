@@ -1,0 +1,15 @@
+/* 
+  English.strings
+  Alias
+
+  Created by Aleksandr on 15.05.2022.
+  
+*/
+
+// MARK: - Menu
+"menu.modal.info" = "The game is divided into turns of about one minute of length. The teams play in turns, and on each team's turn, one of the team members has to explain words on word cards to the other team members.
+The other team members take guesses at the word, and words that have been correctly guessed earn the team one point per word.
+Explanation mistakes (meaning the explainer uses the word to be explained, part of it, or a derivative of it), and words passed over without being guessed take points away. The players move on the board as many places as they have earned points on their turn.";
+
+// MARK: - Settings
+"settings.button.language" = "Language";
