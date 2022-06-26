@@ -12,15 +12,17 @@ protocol BaseCoordinator {
 }
 
 class AppCoordinator: BaseCoordinator {
-    private let window: UIWindow
     
-    init(window: UIWindow) {
-        self.window = window
-    }
+    private lazy var window: UIWindow? = {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return nil }
+        let window = UIWindow(windowScene: windowScene)
+        window.overrideUserInterfaceStyle = .light
+        return window
+    }()
     
     func start() {
-        window.rootViewController = startController()
-        window.makeKeyAndVisible()
+        window?.rootViewController = startController()
+        window?.makeKeyAndVisible()
     }
 }
 
